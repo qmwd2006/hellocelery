@@ -17,8 +17,12 @@ djcelery.setup_loader()
 
 BROKER_URL = 'django://'
 
-CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+CELERY_ACCEPT_CONTENT = ['json', ]
 
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Asia/Shanghai'
+CELERY_ENABLE_UTC = True
 CELERY_IMPORTS = ('hellocelery.tasks',)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
